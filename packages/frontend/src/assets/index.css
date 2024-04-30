@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-theme: black;
+}
+.dark {
+  --color-theme: white;
+}
+body {
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-sun-200 dark:bg-moon-300;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-blue-500;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  @apply shadow-[inset_0_0_0_30px] shadow-sun-200 dark:shadow-moon-300;
+  -webkit-text-fill-color: var(--color-theme);
+}
+
+@layer base {
+  p,
+  i,
+  li,
+  label {
+    @apply text-moon-900 dark:text-sun-100;
+  }
+  input, select {
+    @apply outline-none;
+  }
+}
+
+@layer components {
+  .text {
+    @apply text-moon-900 dark:text-sun-100;
+  }
+  .flex-box {
+    @apply flex justify-center items-center;
+  }
+}
